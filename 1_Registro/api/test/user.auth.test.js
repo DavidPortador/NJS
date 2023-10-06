@@ -22,7 +22,7 @@ test('Usuario registrado', async () => {
         "nombre": "Tester uvu",
         "correo": "tester_uvu@gmail.com",
         "contrasena": "t3$t",
-        "rol": "admin"
+        "rol": "tester"
     }
     const response = await supertest(app)
         .post('/usuario/registro')

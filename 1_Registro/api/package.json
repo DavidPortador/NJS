@@ -1,16 +1,16 @@
 {
   "name": "api_mongo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.mjs",
-    "serve": "nodemon src/server.mjs"
-  },
+  "author": "David Portador",
+  "version": "1.0.1",
+  "type": "module",
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "description": "API REST para registro y gestion de usuarios",
+  "scripts": {
+    "test": "uvu test/",
+    "start": "node src/server.js",
+    "serve": "nodemon src/server.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
@@ -19,6 +19,8 @@
     "mongoose": "^7.5.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
+    "uvu": "^0.5.6"
   }
 }

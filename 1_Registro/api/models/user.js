@@ -4,17 +4,17 @@ import bcrypt from 'bcrypt'
 const schema = new mongoose.Schema({
     nombre: {
         type: String,
-        required: 'Campo nombre es necesario'
+        required: 'Campo nombre necesario'
     },
     correo: {
         type: String,
-        required: 'Campo correo es necesario',
+        required: 'Campo correo necesario',
         unique: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'El correo no cumple con el patrón adecuado']
     },
     contrasena: {
         type: String,
-        required: 'Campo contrasena es necesario'
+        required: 'Campo contrasena necesario'
     },
     rol: {
         type: String,

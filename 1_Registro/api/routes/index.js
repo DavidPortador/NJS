@@ -11,22 +11,21 @@ const router = Router()
 router.get('/', (req, res) => {
     res.send({
         mensaje: 'API REST hecha con Express, MongoDB y JWT',
+        titulo: 'Registro de usuarios',
         autor: 'David Portador'
     })
 })
 
 const cleanFileName = (fileName) => {
-    const file = fileName.split('.').shift()
-    return file
+    return fileName.split('.').shift()
 }
 
 fs.readdirSync(PATH_ROUTER).filter((FileName) => {
     const cleanName = cleanFileName(FileName)
     if (cleanName !== 'index')
-        import(`./${cleanName}.mjs`).then((moduleRouter) => {
+        import(`./${cleanName}.js`).then((moduleRouter) => {
             router.use(`/${cleanName}`, moduleRouter.router)
         })
-
 })
 
-export { router }
+export default router 

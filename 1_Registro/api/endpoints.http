@@ -1,16 +1,73 @@
-@url = http://localhost:3000/
+    ### Developed by DP (VSCode Extension: REST Client)
+@dns = http://localhost:3000
+@token = {{login.response.body.token}}
 
-# Raiz del api
-# GET {{url}}
+    ### APP ###
 
-# Registro
-#  @name registro
-POST {{url}}/auth/registro
-content-type: application/json
+### Raiz del API
+GET {{dns}}
+
+    ### AUTH ###
+
+### Login
+#  @name login
+POST {{dns}}/auth/login 
+Content-Type: application/json
+
 {
-    "nombre": "David",
-    "correo": "david.raw172@gmail.com",
-    "contrasena": "uwu",
-    "rol": "admin"
+    "correo": "tester_client@email.com",
+    "contrasena": "t3$t"
 }
 
+### Logout (solo cuando existe una galleta)
+#  @name logout
+GET {{dns}}/auth/logout
+Content-Type: application/json
+
+    ### USUARIO ###
+
+### Registro de usuario
+#  @name registro
+POST {{dns}}/usuario/registro 
+Content-Type: application/json
+
+{
+    "nombre": "Tester Client",
+    "correo": "tester_client@email.com",
+    "contrasena": "t3$t",
+    "rol": "tester"
+}
+
+### Perfil
+#  @name perfil
+GET {{dns}}/usuario/perfil
+Content-Type: application/json
+Authorization: {{token}}
+
+### Actualizacion de usuario
+#  @name actualizar
+PATCH {{dns}}/usuario/actualizar 
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "contrasena_actual": "t3$t",
+    "nombre": "Tester Client Actualizado",
+    "contrasena_nueva": "t3$t"
+}
+
+### Eliminacion de usuario
+#  @name eliminar
+DELETE {{dns}}/usuario/eliminar 
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "contrasena": "t3$t"
+}
+
+### Listar
+#  @name listar
+GET {{dns}}/usuario/lista
+Content-Type: application/json
+Authorization: {{token}}

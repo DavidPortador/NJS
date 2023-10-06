@@ -13,7 +13,7 @@ const decodeJWT = (token) => {
 const verifyToken = (req, res, next) => {
     let token = req.headers['Authorization'] || req.headers['authorization']
     if (!token) {
-        return res.status(403).send({ mensaje: 'Se necesita un token para la autenticacion' });
+        return res.status(403).send({ mensaje: 'Se necesita un token para la autenticación' });
     } else {
         if (token.indexOf('Bearer ') != -1)
             token = token.split(' ')[1]
@@ -31,18 +31,19 @@ const verifyToken = (req, res, next) => {
 }
 
 const buscarGalleta = (req) => {
-    if (req.rawHeaders.length > 1) {
-        const headers = req.rawHeaders
+    const headers = req.rawHeaders || req.headers || req.header || undefined
+    if (headers.length > 1) {
         let cont = 0
-        while ((headers.length > cont) && (headers[cont].indexOf('Cookie') === -1))
+        while (headers.length > cont){
+            if(headers[cont].includes('session_token=')){
+                const token = headers[cont].split('session_token=')[1] || undefined
+                if(token)
+                    return token
+            }
             cont++
-        if (headers.length > cont) { // Encontro la galleta
-            let token = headers[cont + 1].split('session_token=')[1]
-            return token
-        } else
-            return false
-    } else
-        return false
+        } 
+    }
+    return false
 }
 
 export { generateAccessToken, decodeJWT, verifyToken, buscarGalleta }

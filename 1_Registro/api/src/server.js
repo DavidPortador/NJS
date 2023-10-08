@@ -1,8 +1,14 @@
-import  app  from './app.js'
-import connectDB from '../config/database.js'
+import 'dotenv/config'
+import app from './app.js'
+import connectMongoDB from '../config/database.js'
 
-const port = process.env.PORT || 3000
-const dns = process.env.DNS || 'localhost'
-await connectDB()
+const uri = process.env.MONGODB_URI
+const dns = process.env.DNS
+const port = process.env.PORT
 
-app.listen(port, () => console.log(`Servidor funcionando en: http://${dns}:${port}`))
+await connectMongoDB(uri).then((db)=>{
+    if(db.includes('Error'))
+        console.error(db)
+    else
+        app.listen(port, () => console.log(`Servidor funcionando\n url: http://${dns}:${port}\n db: ${db}`))
+})

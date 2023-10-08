@@ -10,9 +10,10 @@ const router = Router()
 
 router.get('/', (req, res) => {
     res.send({
-        mensaje: 'API REST hecha con Express, MongoDB y JWT',
-        titulo: 'Registro de usuarios',
-        autor: 'David Portador'
+        mensaje: 'Servidor funcionando',
+        titulo: 'Sistema de gestión para Usuarios',
+        autor: 'David Portador',
+        desc: 'API REST hecha con Express, MongoDB y JWT',
     })
 })
 

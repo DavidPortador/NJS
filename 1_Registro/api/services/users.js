@@ -92,7 +92,7 @@ const s_delete_user = async (body, user) => {
 const s_getUsers = async (rol) => {
     try {
         if (rol === 'admin' || rol === 'tester') {
-            const usuarios = await Usuario.find().select('_id nombre correo rol')
+            const usuarios = await Usuario.find().select('_id nombre correo rol createdAt updatedAt')
             return usuarios
         } else
             throw new HttpError('Solo los administradores pueden ver la lista de usuarios', 403)

@@ -20,7 +20,7 @@ test.after(async () => {
 test('Usuario registrado', async () => {
     const body = {
         "nombre": "Tester uvu",
-        "correo": "tester_uvu@gmail.com",
+        "correo": "tester_uvu@email.com",
         "contrasena": "t3$t",
         "rol": "tester"
     }
@@ -35,7 +35,7 @@ test('Usuario registrado', async () => {
 
 test('Inicio de sesión exitoso', async () => {
     const body = {
-        "correo": "tester_uvu@gmail.com",
+        "correo": "tester_uvu@email.com",
         "contrasena": "t3$t"
     }
     const response = await supertest(app)

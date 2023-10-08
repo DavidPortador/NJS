@@ -1,15 +1,20 @@
 import mongoose from 'mongoose'
 
-const connectDB = async () => {
+const connectMongoDB = async (uri) => {
+    let response = 'Error al conectar con MongoDB.\xa0'
     try {
-        mongoose
-            .connect(process.env.MONGODB_URI)
-            .then((conn) => console.log(`Conexión establecida en: ${conn.connections[0].name}`))
-            .catch((error) => console.error(`Error al conectar con MongoDB: ${error.message}`))
+        await mongoose
+            .connect(uri)
+            .then((conn) => {
+                response = conn.connections[0].name
+            })
+            .catch((error) => {
+                response += error.message
+            })
+        return response 
     } catch (e) {
-        console.error(`Exception al conectar con MongoDB: ${e.message}`)
-        process.exit(1)
+        return response + e.message
     }
 }
 
-export default connectDB
+export default connectMongoDB

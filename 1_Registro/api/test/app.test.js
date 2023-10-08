@@ -12,6 +12,7 @@ test('App', async () => {
         .set('Accept', 'application/json')
     assert.is(response.statusCode, 200)
     assert.is(response.body instanceof Object, true)
+    assert.is(response.body.mensaje, 'Servidor funcionando')
 })
 
 test.run()

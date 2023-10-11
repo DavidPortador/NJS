@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap');
+
+html{
+    background-color: var(--background);
+    color: var(--font);
+    font-family: 'Karla', sans-serif;
+    font-size: calc(0.8em + 0.8vw);
+}
+
+.title{
+    font-size: calc(0.8em + 0.8vw);
+}
+
+/* SMARTPHONE RESOLUTION */
+@media screen and (max-width: 767px) and (max-height: 915px) {
+    body {
+        font-size: calc(1em + 1vw);
+    }
+
+    .title{
+        font-size: calc(1.3em + 1.3vw);
+    }
+}

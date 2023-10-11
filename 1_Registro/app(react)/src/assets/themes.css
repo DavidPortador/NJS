@@ -1,0 +1,19 @@
+.light-mode {
+    --background: #F8F4EA;
+    --icon: #17202A;
+    --logo: #17202a85;
+    --form: #A1CCD1;
+    --font: black;
+    --input: #17202a4d;
+    --btnsucc: #539165;
+}
+
+.dark-mode {
+    --background: #1f1f1f;
+    --icon: #eaecee;
+    --logo: #eaecee40;
+    --form: #17202a;
+    --font: white;
+    --input: #eaecee1a;
+    --btnsucc: #0c5536;
+}

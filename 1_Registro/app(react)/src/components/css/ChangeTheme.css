@@ -1,0 +1,10 @@
+i{
+    color: var(--icon);
+    text-shadow: 0 0 0.8rem var(--background);
+}
+
+i:hover{
+    cursor: pointer;
+    animation: pulse;
+    animation-duration: 0.5s;
+}

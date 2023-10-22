@@ -6,7 +6,7 @@ export const ChangeTheme = () => {
   const icon = theme === 'dark' ? 'fa-regular fa-sun' : 'fa-solid fa-moon'
   return (
     <>
-      <i className={ icon } onClick={ toggleTheme }></i>
+      <i className={ `${icon} icontheme` } onClick={ toggleTheme }></i>
     </>
   )
 }

@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400&display=swap');
 
-html{
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
     background-color: var(--background);
     color: var(--font);
     font-family: 'Karla', sans-serif;
     font-size: calc(0.8em + 0.8vw);
 }
 
-.title{
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--link);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.titulo {
     font-size: calc(0.8em + 0.8vw);
 }
 
@@ -17,7 +35,7 @@ html{
         font-size: calc(1em + 1vw);
     }
 
-    .title{
+    .titulo {
         font-size: calc(1.3em + 1.3vw);
     }
 }

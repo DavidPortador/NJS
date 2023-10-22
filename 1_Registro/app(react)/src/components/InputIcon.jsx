@@ -10,7 +10,7 @@ export const InputIcon = ({ title, icon, type }) => {
   const [iconEye, setIconEye] = useState(defaultIconEye)
   const changeType = () => {
     setType(tipo==='password' ? defalutType : 'password')
-    setIconEye(tipo==='password' ? defaultIconEye : 'fa-solid fa-eye')
+    setIconEye(tipo==='password' ? 'fa-solid fa-eye' : defaultIconEye)
   }
   return (
     <div className="input-container">

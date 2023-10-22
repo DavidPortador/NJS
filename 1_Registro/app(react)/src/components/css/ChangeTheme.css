@@ -1,10 +1,4 @@
-i{
-    color: var(--icon);
-    text-shadow: 0 0 0.8rem var(--background);
-}
-
-i:hover{
+i.icontheme:hover{
     cursor: pointer;
-    animation: pulse;
-    animation-duration: 0.5s;
+    animation: swing 1.5s infinite;
 }

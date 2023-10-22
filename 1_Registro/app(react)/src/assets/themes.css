@@ -1,18 +1,20 @@
 .light-mode {
     --background: #F8F4EA;
+    --link: #004225;
     --icon: #17202A;
     --logo: #17202a85;
-    --form: #A1CCD1;
+    --form: #9BABB8;
     --font: black;
     --input: #17202a4d;
     --btnsucc: #539165;
 }
 
 .dark-mode {
-    --background: #1f1f1f;
+    --background: #0F0F0F;
+    --link: #B0D9B1;
     --icon: #eaecee;
     --logo: #eaecee40;
-    --form: #17202a;
+    --form: #232D3F;
     --font: white;
     --input: #eaecee1a;
     --btnsucc: #0c5536;
